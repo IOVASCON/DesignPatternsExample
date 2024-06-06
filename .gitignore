@@ -20,3 +20,6 @@
 *.rar
 *.tar
 *.7z
+
+# Ignore compiled classes and lib directory
+lib/
