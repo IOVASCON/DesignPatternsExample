@@ -46,6 +46,22 @@ DesignPatternsExample
 ├── README.md
 ├── .gitignore
 
+## Arquivo .gitignore
+
+O arquivo `.gitignore` é utilizado para especificar quais arquivos e diretórios o Git deve ignorar e não incluir no controle de versão. Isso é importante para evitar que arquivos desnecessários, como arquivos temporários ou compilados, sejam incluídos no repositório.
+
+### Por que Ignorar a Pasta `lib`
+
+No contexto deste projeto, a pasta `lib` contém os arquivos `.class` compilados a partir dos arquivos fonte `.java`. Estes arquivos não precisam ser versionados por várias razões:
+
+1. **Reprodutibilidade:** Qualquer desenvolvedor que clone o repositório pode compilar os arquivos fonte localmente para gerar os arquivos `.class`. Versionar arquivos compilados não é necessário e pode causar conflitos se diferentes desenvolvedores tiverem versões ligeiramente diferentes dos mesmos arquivos compilados.
+
+2. **Espaço em Disco e Performance:** Arquivos compilados podem ser grandes e incluir muitos deles no repositório pode aumentar significativamente o tamanho do repositório, o que pode afetar a performance e o tempo de clonagem.
+
+3. **Manutenção e Limpeza:** Manter arquivos compilados no repositório pode tornar o gerenciamento do código mais difícil, pois é necessário garantir que eles sejam atualizados sempre que os arquivos fonte mudarem. É mais simples e limpo compilar os arquivos quando necessário.
+
+Por essas razões, a pasta `lib` é incluída no arquivo `.gitignore` para garantir que os arquivos compilados não sejam versionados.
+
 ## Executando o Projeto
 
 Para executar o projeto, siga as instruções abaixo:
